@@ -35,11 +35,11 @@ export default class MainGameplay extends Phaser.Group {
 
         // banner.padding.set(10, 16)
         // banner.anchor.setTo(0.5)
-        this.graphics = this.game.add.graphics(-this.game.width / 2, -this.game.height / 2);
+        this.graphics = this.game.add.graphics(0,0);
         this.graphics.beginFill(0x000000, 1);
-        this.graphics.drawRect(0, 0, this.game.width, this.game.height);
+        this.graphics.drawRect(-this.game.width/2, -this.game.height/2, this.game.width, this.game.height);
         this.graphics.endFill();
-        this.graphics.alpha = 1
+        this.graphics.alpha = 11
         this.add(this.graphics)
     }
 
