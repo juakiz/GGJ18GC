@@ -3,7 +3,7 @@ class Onomatopoia {
 
     }
 
-    static show(xx, yy, _text, _game) {
+    static show(xx, yy, _text, _game, _time) {
         var style = {
             font: "64px Bangers",
             fill: "#000000",
@@ -24,7 +24,7 @@ class Onomatopoia {
         }, 100, Phaser.Easing.Quadratic.InOut, true);
         var tw2 = _game.add.tween(text).to({
             alpha: 0
-        }, 500, Phaser.Easing.Quadratic.InOut, false);
+        }, _time, Phaser.Easing.Quadratic.InOut, false);
         tw1.chain(tw2)
         tw2.onComplete.add(function() {
             text.destroy()
