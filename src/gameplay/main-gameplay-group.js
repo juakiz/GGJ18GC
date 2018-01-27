@@ -39,8 +39,10 @@ export default class MainGameplay extends Phaser.Group {
         this.graphics.beginFill(0x000000, 1);
         this.graphics.drawRect(-this.game.width/2, -this.game.height/2, this.game.width, this.game.height);
         this.graphics.endFill();
-        this.graphics.alpha = 11
+        this.graphics.alpha = 1
         this.add(this.graphics)
+
+        this.game.time.events.add(Phaser.Timer.SECOND * 2, this.ui.showCinematic, this);
     }
 
     zoomIn() {
