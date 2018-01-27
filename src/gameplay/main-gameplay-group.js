@@ -4,7 +4,7 @@ import ShipFight from './main/ship-fight';
 import UI from './main/ui';
 
 export default class MainGameplay extends Phaser.Group {
-    constructor(game, parent) {
+    constructor(game) {
         super(game);
 
         // this.game = game;
@@ -15,6 +15,8 @@ export default class MainGameplay extends Phaser.Group {
         this.x = this.game.width / 2
         this.y = this.game.height / 2
 
+        this.WIDTH = 1280;
+        this.HEIGHT = 720;
     }
 
     init() {
