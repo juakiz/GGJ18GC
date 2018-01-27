@@ -3,7 +3,7 @@ class Onomatopoia {
 
     }
 
-    static show(xx, yy, _text, _game, _time) {
+    static show(xx, yy, _text, _game, _time, _size) {
         var style = {
             font: "64px Bangers",
             fill: "#000000",
@@ -12,12 +12,14 @@ class Onomatopoia {
         };
         var text = _game.add.text(xx, yy, _text, style);
         text.anchor.setTo(0.5)
-        text.angle = -30+_game.rnd.integerInRange(0, 60)
+        text.angle = -30 + _game.rnd.integerInRange(0, 60)
         text.alpha = 0
+
+        text.scale.setTo(0.25*_size)
 
         //	Stroke color and thickness
         text.stroke = '#FFFFFF';
-        text.strokeThickness = 6;
+        text.strokeThickness = 1 * _size;
 
         var tw1 = _game.add.tween(text).to({
             alpha: 1
