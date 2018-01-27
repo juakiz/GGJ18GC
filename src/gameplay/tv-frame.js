@@ -18,15 +18,15 @@ export default class TvFrame extends Phaser.Group {
 
     zoomIn() {
         this.game.add.tween(this.scale).to({
-            x: 0.8,
-            y: 0.8
+            x: 1,
+            y: 1
         }, 1000, Phaser.Easing.Quadratic.InOut, true);
     }
 
     zoomOut() {
         this.game.add.tween(this.scale).to({
-            x: 1,
-            y: 1
+            x: 0.8,
+            y: 0.8
         }, 1000, Phaser.Easing.Quadratic.InOut, true);
     }
 }

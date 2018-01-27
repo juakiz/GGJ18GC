@@ -7,27 +7,30 @@ import Onomatopoia from '../gameplay/onomatopoia';
 
 
 export default class extends Phaser.State {
-  init () {
+    init() {
 
-  }
-  preload () {}
-
-  create () {
-    this.stage.backgroundColor = "#4488AA";
-
-    this.main = new MainGG(this.game);
-    this.tvFrame = new TvFrame(this.game);
-    this.onomatopoia = new Onomatopoia(this.game);
-
-    this.main.scale.setTo(0.8)
-
-    this.game.add.tween(this.main.scale).to( {x:1, y:1}, 1000, Phaser.Easing.Quadratic.InOut, true);
-    this.tvFrame.zoomOut()
-  }
-
-  render () {
-    if (__DEV__) {
-      //this.game.debug.spriteInfo(this.mushroom, 32, 32)
     }
-  }
+    preload() {}
+
+    create() {
+        this.stage.backgroundColor = "#4488AA";
+
+        this.main = new MainGG(this.game);
+        this.tvFrame = new TvFrame(this.game);
+
+        this.main.scale.setTo(0.8)
+
+        this.main.fadeIn()
+        this.game.time.events.add(1000, function() {
+            this.main.zoomIn()
+            this.tvFrame.zoomIn()
+        }, this);
+
+    }
+
+    render() {
+        if (__DEV__) {
+            //this.game.debug.spriteInfo(this.mushroom, 32, 32)
+        }
+    }
 }
