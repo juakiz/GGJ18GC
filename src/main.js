@@ -16,7 +16,7 @@ class Game extends Phaser.Game {
     const width = config.gameWidth
     const height = config.gameHeight
 
-    super(width, height, Phaser.WEBGL, 'content', null)
+    super(1280, 720, Phaser.WEBGL, 'content', null)
 
     this.state.add('Boot', BootState, false)
     this.state.add('Splash', SplashState, false)

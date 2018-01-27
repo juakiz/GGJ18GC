@@ -25,23 +25,22 @@ export default class MainGameplay extends Phaser.Group {
         this.bubble = new Bubble(this.game, this);
         this.ui = new UI(this.game, this);
 
-        this.graphics = this.game.add.graphics(-this.game.width / 2, -this.game.height / 2);
+        // const bannerText = 'Ciao Mattia'
+        // let banner = this.game.add.text(0,0, bannerText, {
+        //     font: '40px Bangers',
+        //     fill: '#77BFA3',
+        //     smoothed: false
+        // })
+        // this.add(banner)
+
+        // banner.padding.set(10, 16)
+        // banner.anchor.setTo(0.5)
+        this.graphics = this.game.add.graphics(0,0);
         this.graphics.beginFill(0x000000, 1);
-        this.graphics.drawRect(0, 0, this.game.width, this.game.height);
+        this.graphics.drawRect(-this.game.width/2, -this.game.height/2, this.game.width, this.game.height);
         this.graphics.endFill();
-        this.graphics.alpha = 1
+        this.graphics.alpha = 11
         this.add(this.graphics)
-
-        const bannerText = 'Ciao Mattia'
-        let banner = this.game.add.text(0, 0, bannerText, {
-            font: '40px Bangers',
-            fill: '#77BFA3',
-            smoothed: false
-        })
-        this.add(banner)
-
-        banner.padding.set(10, 16)
-        banner.anchor.setTo(0.5)
     }
 
     zoomIn() {
