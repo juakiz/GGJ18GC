@@ -1,13 +1,15 @@
 
 
 export default class Button extends Phaser.Group {
-  constructor(game, xx, yy, _text) {
-    super(game);
+  constructor(callbackParent, xx, yy, _text, _callback, parent) {
+    super(callbackParent.game);
 
+    this.callbackParent = callbackParent
     this.game = game
     this.x = xx
     this.y = yy
     this.textValue = _text
+    this.clickCallback = _callback
 
     this.create()
   }
@@ -23,5 +25,12 @@ export default class Button extends Phaser.Group {
     this.text.anchor.setTo(0.5)
     this.add(this.text)
 
+    this.sprite.inputEnabled = true;
+    this.sprite.events.onInputDown.add(this.clickDown, this);
+
+  }
+
+  clickDown(){
+  	this.clickCallback.call(this.callbackParent)
   }
 }
