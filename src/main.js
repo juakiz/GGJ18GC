@@ -13,8 +13,8 @@ import config from './config'
 class Game extends Phaser.Game {
   constructor () {
     const docElement = document.documentElement
-    const width = docElement.clientWidth > config.gameWidth ? config.gameWidth : docElement.clientWidth
-    const height = docElement.clientHeight > config.gameHeight ? config.gameHeight : docElement.clientHeight
+    const width = config.gameWidth
+    const height = config.gameHeight
 
     super(1280, 720, Phaser.WEBGL, 'content', null)
 
@@ -32,6 +32,7 @@ class Game extends Phaser.Game {
 }
 
 window.game = new Game()
+
 
 if (window.cordova) {
   var app = {
