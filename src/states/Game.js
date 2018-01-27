@@ -19,6 +19,10 @@ export default class extends Phaser.State {
     this.tvFrame = new TvFrame(this.game);
     this.onomatopoia = new Onomatopoia(this.game);
 
+    this.main.scale.setTo(0.8)
+
+    this.game.add.tween(this.main.scale).to( {x:1, y:1}, 1000, Phaser.Easing.Quadratic.InOut, true);
+    this.tvFrame.zoomOut()
   }
 
   render () {

@@ -22,6 +22,7 @@ export default class extends Phaser.State {
     this.load.image('loaderBg', './assets/images/loader-bg.png')
     this.load.image('loaderBar', './assets/images/loader-bar.png')
     this.game.load.image('buttonSpr', 'assets/images/button.png');
+    this.game.load.image('tvFrame', 'assets/images/tv_frame_ph.png');
   }
 
   render () {
