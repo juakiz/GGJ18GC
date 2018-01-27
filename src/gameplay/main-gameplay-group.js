@@ -15,6 +15,7 @@ export default class MainGameplay extends Phaser.Group {
   }
 
   init() {
+    console.log("blalbla")
     this.bg = new Background(this.game, this);
     this.shipFight = new ShipFight(this.game, this);
     this.bubble = new Bubble(this.game, this);
