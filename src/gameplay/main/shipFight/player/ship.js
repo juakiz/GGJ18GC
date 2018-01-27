@@ -1,4 +1,4 @@
-export default class Player extends Phaser.Group {
+export default class Ship extends Phaser.Group {
   constructor(game, parent) {
     super(game, parent);
 
