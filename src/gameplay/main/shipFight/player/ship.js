@@ -30,6 +30,13 @@ export default class Player extends Phaser.Group {
     this.body = this.game.add.sprite(0, 0, 'boat_body');
     this.body.anchor.set(0.5, 1)
     this.add(this.body);
+  }
 
+  swingCannon()
+  {
+    // if ()
+    // {
+
+    // }
   }
 }
