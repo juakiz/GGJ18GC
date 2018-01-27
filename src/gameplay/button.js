@@ -31,6 +31,7 @@ export default class Button extends Phaser.Group {
   }
 
   clickDown(){
+  	this.sprite.inputEnabled = false
   	this.clickCallback.call(this.callbackParent)
   }
 }
