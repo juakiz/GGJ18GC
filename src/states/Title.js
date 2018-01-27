@@ -5,7 +5,9 @@ import MainGG from '../gameplay/main-gameplay-group'
 
 export default class extends Phaser.State {
   init () {
-  	console.log("title")
+    console.log("title")
+    this.state.start('Game')
+
   }
   preload () {}
 
