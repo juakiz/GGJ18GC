@@ -9,13 +9,13 @@ export default class extends Phaser.State {
         console.log("TITLE")
     }
     create() {
-        
-       this.filter = null
-       this.filterSprite = null
 
-        
+        this.filter = null
+        this.filterSprite = null
 
-        
+
+
+
         var fragmentSrc = [
 
             "precision mediump float;",
@@ -65,15 +65,15 @@ export default class extends Phaser.State {
         */
 
 
-        
+
 
         this.spritel = this.game.add.sprite(this.game.width / 2, this.game.height / 2, 'start');
         this.spritel.anchor.setTo(0.5)
         this.spritel.scale.setTo(0.8)
 
-        
 
-        this.playButton = new Button(this, this.game.width / 2, this.game.height / 3 * 2, "PLAY", this.goToGame)
+
+        //this.playButton = new Button(this, this.game.width / 2, this.game.height / 3 * 2, "PLAY", this.goToGame)
 
         this.graphics = this.game.add.graphics(0, 0);
         this.graphics.beginFill(0x000000, 1);
@@ -91,10 +91,21 @@ export default class extends Phaser.State {
             value: 0,
         }, 1000, Phaser.Easing.Quadratic.InOut, true);
         */
+        this.canPress = true
+
+        this.game.input.keyboard.addCallbacks(this, function() {
+            var keyboard = this.game.input.keyboard;
+            keyboard.onDownCallback = keyboard.onUpCallback = keyboard.onPressCallback = null;
+            if (this.canPress == true) {
+                this.canPress = false
+                this.goToGame()
+            }
+        });
+
     }
     goToGame() {
 
-    	ONO.show(this.game.width/2, this.game.height/2, "click!", this.game)
+        ONO.show(this.game.width / 2, this.game.height / 2, "CREEEEEEEEEEEEEEEEEEEEEEEE", this.game, 1000)
 
         var tw = this.game.add.tween(this.graphics).to({
             alpha: 1
@@ -107,8 +118,7 @@ export default class extends Phaser.State {
 
     }
 
-    update(){
-    	//this.filter.update({x:this.filter.value});
-
+    update() {
+        //this.filter.update({x:this.filter.value});
     }
 }
