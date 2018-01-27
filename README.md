@@ -1,58 +1,102 @@
-# Webpack ES6 boilerplate
+# Phaser + ES6 + Webpack.
+#### A bootstrap project to create games with Phaser + ES6 + Webpack.
 
-[![tests][tests]][tests-url]
-[![coverage][cover]][cover-url]
+![Phaser+ES6+Webpack](https://raw.githubusercontent.com/lean/phaser-es6-webpack/master/assets/images/phaser-es6-webpack.jpg)
 
-A minimalistic Webpack 2 ES6 boilerplate project.
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-## Prerequisites
-
-[![node][node]][node-url]
-[![npm][npm]][npm-url]
-      
-- [Node.js](http://es6-features.org)
 
 ## Features
+- ESLINT with JavaScript Standard Style configuration
+- Next generation of Javascript
+- Browsers are automatically updated as you change project files
+- Webpack ready
+- WebFont Loader
 
-- [Webpack](https://webpack.js.org/guides) (v3.5.5)
-    - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server) (v2.7.1)
-    - [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement)
-    - [Clean Webpack Plugin](https://github.com/johnagan/clean-webpack-plugin) (v0.1.16)
-- [ECMAScript 6](http://es6-features.org)
-- [Babel](https://babeljs.io/docs/setup/#installation) (v6.26.0)
-- [ESLint](https://eslint.org/docs/user-guide/getting-started) (v4.5.0)
-- [Jest](https://facebook.github.io/jest/docs/en/getting-started.html) (v20.0.4)
-- [Sass](http://sass-lang.com/guide)
+## Typescript 
+If you need typescript support checkout the ```typescript``` branch. Thanks to @MatsMaker
 
-## Start Dev Server
+# Setup
+You'll need to install a few things before you have a working copy of the project.
 
-1. `git clone https://github.com/jluccisano/webpack-es6-boilerplate.git`
-2. Run `npm install`
-3. Start the dev server using `npm start`
-3. Open [http://localhost:9000](http://localhost:9000)
+## 1. Clone this repo:
+
+Navigate into your workspace directory.
+
+Run:
+
+```git clone https://github.com/lean/phaser-es6-webpack.git```
+
+## 2. Install node.js and npm:
+
+https://nodejs.org/en/
 
 
-## Commands
+## 3. Install dependencies (optionally you can install [yarn](https://yarnpkg.com/)):
 
-- `npm start` - start the dev server
-- `npm run build` - create build in `dist` folder
-- `npm run lint` - run an ESLint check
-- `npm run coverage` - run code coverage and generate report in the `coverage` folder
-- `npm test` - run all tests
-- `npm run test:watch` - run all tests in watch mode
+Navigate to the cloned repo's directory.
 
-## Licence
+Run:
 
-_webpack-es6-boilerplate_ is available under MIT.
+```npm install``` 
 
-[npm]: https://img.shields.io/badge/npm-5.3.0-blue.svg
-[npm-url]: https://npmjs.com/
+or if you chose yarn, just run ```yarn```
 
-[node]: https://img.shields.io/node/v/webpack-es6-boilerplate.svg
-[node-url]: https://nodejs.org
+## 4. Run the development server:
 
-[tests]: http://img.shields.io/travis/jluccisano/webpack-es6-boilerplate.svg
-[tests-url]: https://travis-ci.org/jluccisano/webpack-es6-boilerplate
+Run:
 
-[cover]: https://codecov.io/gh/jluccisano/webpack-es6-boilerplate/branch/master/graph/badge.svg
-[cover-url]: https://codecov.io/gh/jluccisano/webpack-es6-boilerplate
+```npm run dev```
+
+This will run a server so you can run the game in a browser. It will also start a watch process, so you can change the source and the process will recompile and refresh the browser automatically.
+
+To run the game, open your browser and enter http://localhost:3000 into the address bar.
+
+
+## Build for deployment:
+
+Run:
+
+```npm run deploy```
+
+This will optimize and minimize the compiled bundle.
+
+## Deploy for cordova:
+Make sure to uncomment the cordova.js file in the src/index.html and to update config.xml with your informations. (name/description...)
+
+More informations about the cordova configuration:
+https://cordova.apache.org/docs/en/latest/config_ref/
+
+There is 3 platforms actually tested and supported : 
+- browser
+- ios
+- android
+
+First run (ios example):
+
+```
+npm run cordova
+cordova platform add ios
+cordova run ios
+```
+
+Update (ios example):
+
+```
+npm run cordova
+cordova platform update ios
+cordova run ios
+```
+
+This will optimize and minimize the compiled bundle.
+
+## Credits
+Big thanks to these great repos:
+
+https://github.com/belohlavek/phaser-es6-boilerplate
+
+https://github.com/cstuncsik/phaser-es6-demo
+
+## Contributors
+
+https://github.com/RenaudROHLINGER
