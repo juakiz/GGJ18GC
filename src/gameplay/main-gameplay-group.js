@@ -4,36 +4,7 @@ import ShipFight from './main/ship-fight';
 import UI from './main/ui';
 
 export default class MainGameplay extends Phaser.Group {
-<<<<<<< HEAD
-  constructor(game, parent) {
-    super(game);
-
-    // this.game = game;
-    this._state = game.state.getCurrentState();
-
-    this.init();
-    
-  }
-
-  init() {
-    console.log("blalbla")
-    this.bg = new Background(this.game, this);
-    this.shipFight = new ShipFight(this.game, this);
-    this.bubble = new Bubble(this.game, this);
-    this.ui = new UI(this.game, this);
-
-    const bannerText = 'Ciao Mattia'
-    let banner = this.game.add.text(this.game.world.centerX, this.game.world.centerY, bannerText, {
-      font: '40px Bangers',
-      fill: '#77BFA3',
-      smoothed: false
-    })
-
-    banner.padding.set(10, 16)
-    banner.anchor.setTo(0.5)
-  }
-=======
-    constructor(game, parent) {
+    constructor(game) {
         super(game);
 
         // this.game = game;
@@ -44,6 +15,8 @@ export default class MainGameplay extends Phaser.Group {
         this.x = this.game.width / 2
         this.y = this.game.height / 2
 
+        this.WIDTH = 1280;
+        this.HEIGHT = 720;
     }
 
     init() {
@@ -52,8 +25,15 @@ export default class MainGameplay extends Phaser.Group {
         this.bubble = new Bubble(this.game, this);
         this.ui = new UI(this.game, this);
 
+        this.graphics = this.game.add.graphics(-this.game.width / 2, -this.game.height / 2);
+        this.graphics.beginFill(0x000000, 1);
+        this.graphics.drawRect(0, 0, this.game.width, this.game.height);
+        this.graphics.endFill();
+        this.graphics.alpha = 1
+        this.add(this.graphics)
+
         const bannerText = 'Ciao Mattia'
-        let banner = this.game.add.text(0,0, bannerText, {
+        let banner = this.game.add.text(0, 0, bannerText, {
             font: '40px Bangers',
             fill: '#77BFA3',
             smoothed: false
@@ -63,5 +43,41 @@ export default class MainGameplay extends Phaser.Group {
         banner.padding.set(10, 16)
         banner.anchor.setTo(0.5)
     }
->>>>>>> a590084fbb907053da358c789d8c1a0bf0870388
+
+    zoomIn() {
+        this.game.add.tween(this.scale).to({
+            x: 1,
+            y: 1
+        }, 1000, Phaser.Easing.Quadratic.InOut, true);
+    }
+
+    zoomOut() {
+        this.game.add.tween(this.scale).to({
+            x: 0.8,
+            y: 0.8
+        }, 1000, Phaser.Easing.Quadratic.InOut, true);
+    }
+
+    fadeIn() {
+        this.bringToTop(this.graphics)
+        var tw = this.game.add.tween(this.graphics).to({
+            alpha: 0
+        }, 1000, Phaser.Easing.Quadratic.In, true);
+
+        tw.onComplete.add(function() {
+            //DO SOMETHING?
+        }, this)
+    }
+
+    fadeOut() {
+this.bringToTop(this.graphics)
+
+        var tw = this.game.add.tween(this.graphics).to({
+            alpha: 1
+        }, 1000, Phaser.Easing.Quadratic.In, true);
+
+        tw.onComplete.add(function() {
+            //DO SOMETHING?
+        }, this)
+    }
 }
