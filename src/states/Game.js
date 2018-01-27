@@ -2,6 +2,9 @@
 import Phaser from 'phaser'
 // import Mushroom from '../sprites/Mushroom'
 import MainGG from '../gameplay/main-gameplay-group'
+import TvFrame from '../gameplay/tv-frame';
+import Onomatopoia from '../gameplay/onomatopoia';
+
 
 export default class extends Phaser.State {
   init () {
@@ -10,27 +13,12 @@ export default class extends Phaser.State {
   preload () {}
 
   create () {
+    this.stage.backgroundColor = "#4488AA";
+
     this.main = new MainGG(this.game);
-    console.log('HOLAA')
-    // this.init();
-    // const bannerText = 'Phaser + ES6 + Webpack'
-    // let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText, {
-    //   font: '40px Bangers',
-    //   fill: '#77BFA3',
-    //   smoothed: false
-    // })
+    this.tvFrame = new TvFrame(this.game);
+    this.onomatopoia = new Onomatopoia(this.game);
 
-    // banner.padding.set(10, 16)
-    // banner.anchor.setTo(0.5)
-
-    // this.mushroom = new Mushroom({
-    //   game: this.game,
-    //   x: this.world.centerX,
-    //   y: this.world.centerY,
-    //   asset: 'mushroom'
-    // })
-
-    // this.game.add.existing(this.mushroom)
   }
 
   render () {
