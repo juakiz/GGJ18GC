@@ -13,7 +13,7 @@ export default class Player extends Phaser.Group {
     {
       this.y = this.game.height / 2;
     }
-    this.y -= 60;
+    this.y -= 30;
     
     this.init();
   }

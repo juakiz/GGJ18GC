@@ -9,7 +9,7 @@ export default class Faro extends Phaser.Group {
     this.cannonX = 50;
     this.cannonY = -32;
     this.cannonAngle = -15;
-    this.swingAmplittude = 60;
+    this.swingAmplittude = 75;
 
     this.init();
   }
@@ -31,9 +31,6 @@ export default class Faro extends Phaser.Group {
     this.cannonWheel = this.game.add.sprite(this.cannonX, this.cannonY, 'cannon_wheel');
     this.cannonWheel.anchor.set(0.27, 0.5);
     this.add(this.cannonWheel);
-
-    // this.debugKeyP = this.game.input.keyboard.addKey(Phaser.Keyboard.P);
-    // this.debugKeyP.onDown.add(()=> {this.swipeCannon();}, this);
 
     this.swipeCannon();
 
