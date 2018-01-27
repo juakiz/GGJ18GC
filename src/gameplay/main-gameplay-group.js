@@ -25,15 +25,15 @@ export default class MainGameplay extends Phaser.Group {
         this.bubble = new Bubble(this.game, this);
         this.ui = new UI(this.game, this);
 
-        const bannerText = 'Ciao Mattia'
-        let banner = this.game.add.text(0,0, bannerText, {
-            font: '40px Bangers',
-            fill: '#77BFA3',
-            smoothed: false
-        })
-        this.add(banner)
+        // const bannerText = 'Ciao Mattia'
+        // let banner = this.game.add.text(0,0, bannerText, {
+        //     font: '40px Bangers',
+        //     fill: '#77BFA3',
+        //     smoothed: false
+        // })
+        // this.add(banner)
 
-        banner.padding.set(10, 16)
-        banner.anchor.setTo(0.5)
+        // banner.padding.set(10, 16)
+        // banner.anchor.setTo(0.5)
     }
 }

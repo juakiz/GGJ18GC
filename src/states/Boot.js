@@ -23,6 +23,15 @@ export default class extends Phaser.State {
     this.load.image('loaderBar', './assets/images/loader-bar.png')
     this.game.load.image('buttonSpr', 'assets/images/button.png');
     this.game.load.image('tvFrame', 'assets/images/tv_frame_ph.png');
+    this.game.load.image('boat_body', 'assets/images/placeholder/boat_body.png');
+    this.game.load.image('boat_dude', 'assets/images/placeholder/boat_dude.png');
+    this.game.load.image('boat_trees', 'assets/images/placeholder/boat_trees.png');
+    this.game.load.image('boat_vail_1', 'assets/images/placeholder/boat_vail_1.png');
+    this.game.load.image('boat_vail_2', 'assets/images/placeholder/boat_vail_2.png');
+    this.game.load.image('bullet', 'assets/images/placeholder/bullet.png');
+    this.game.load.image('cannon', 'assets/images/placeholder/cannon.png');
+    this.game.load.image('faro', 'assets/images/placeholder/faro.png');
+    this.game.load.image('cannon_wheel', 'assets/images/placeholder/cannon_wheel.png');
   }
 
   render () {

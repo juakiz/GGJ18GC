@@ -12,8 +12,8 @@ export default class ShipFight extends Phaser.Group {
 
   init()
   {
-    this.topPlayer = new Player(this.game, this, false);
-    this.botPlayer = new Player(this.game, this, true);
+    this.topPlayer = new Player(this.game, this, 'top');
+    this.botPlayer = new Player(this.game, this, 'bot');
   }
 
 }
