@@ -105,7 +105,7 @@ export default class extends Phaser.State {
     }
     goToGame() {
 
-        ONO.show(this.game.width / 2, this.game.height / 2, "Cree!", this.game, 1000, 6)
+        ONO.show(this.game.width / 2, this.game.height / 2, "Cree!", this.game, 1000, 6, null)
 
         var tw = this.game.add.tween(this.graphics).to({
             alpha: 1

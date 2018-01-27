@@ -24,6 +24,7 @@ export default class extends Phaser.State {
     this.game.load.image('faro', 'assets/images/placeholder/faro.png');
     this.game.load.image('cannon_wheel', 'assets/images/placeholder/cannon_wheel.png');
     this.game.load.image('start', 'assets/images/layouts/02_start.png');
+    this.game.load.image('hawk_complete', 'assets/images/placeholder/hawk parts/hawk_complete.png');
   }
 
   create () {

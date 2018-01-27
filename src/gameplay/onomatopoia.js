@@ -3,9 +3,9 @@ class Onomatopoia {
 
     }
 
-    static show(xx, yy, _text, _game, _time, _size) {
+    static show(xx, yy, _text, _game, _time, _size, _par) {
         var style = {
-            font: "64px Bangers",
+            font: "64px Chela One",
             fill: "#000000",
             boundsAlignH: "center",
             boundsAlignV: "middle"
@@ -31,6 +31,10 @@ class Onomatopoia {
         tw2.onComplete.add(function() {
             text.destroy()
         }, this)
+
+        if (_par!= null){
+        	_par.add(text)
+        }
     }
 }
 export default Onomatopoia
