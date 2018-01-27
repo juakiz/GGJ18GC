@@ -4,36 +4,7 @@ import ShipFight from './main/ship-fight';
 import UI from './main/ui';
 
 export default class MainGameplay extends Phaser.Group {
-<<<<<<< HEAD
-  constructor(game, parent) {
-    super(game);
-
-    // this.game = game;
-    this._state = game.state.getCurrentState();
-
-    this.init();
-    
-  }
-
-  init() {
-    console.log("blalbla")
-    this.bg = new Background(this.game, this);
-    this.shipFight = new ShipFight(this.game, this);
-    this.bubble = new Bubble(this.game, this);
-    this.ui = new UI(this.game, this);
-
-    const bannerText = 'Ciao Mattia'
-    let banner = this.game.add.text(this.game.world.centerX, this.game.world.centerY, bannerText, {
-      font: '40px Bangers',
-      fill: '#77BFA3',
-      smoothed: false
-    })
-
-    banner.padding.set(10, 16)
-    banner.anchor.setTo(0.5)
-  }
-=======
-    constructor(game, parent) {
+    constructor(game) {
         super(game);
 
         // this.game = game;
@@ -44,6 +15,8 @@ export default class MainGameplay extends Phaser.Group {
         this.x = this.game.width / 2
         this.y = this.game.height / 2
 
+        this.WIDTH = 1280;
+        this.HEIGHT = 720;
     }
 
     init() {
@@ -63,5 +36,4 @@ export default class MainGameplay extends Phaser.Group {
         banner.padding.set(10, 16)
         banner.anchor.setTo(0.5)
     }
->>>>>>> a590084fbb907053da358c789d8c1a0bf0870388
 }
