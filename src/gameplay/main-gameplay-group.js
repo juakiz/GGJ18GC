@@ -33,14 +33,38 @@ export default class MainGameplay extends Phaser.Group {
 
         // banner.padding.set(10, 16)
         // banner.anchor.setTo(0.5)
-        this.graphics = this.game.add.graphics(0,0);
+        this.graphics = this.game.add.graphics(0, 0);
         this.graphics.beginFill(0x000000, 1);
-        this.graphics.drawRect(-this.game.width/2, -this.game.height/2, this.game.width, this.game.height);
+        this.graphics.drawRect(-this.game.width / 2, -this.game.height / 2, this.game.width, this.game.height);
         this.graphics.endFill();
         this.graphics.alpha = 1
         this.add(this.graphics)
 
+<<<<<<< HEAD
         // this.game.time.events.add(Phaser.Timer.SECOND * 2, this.ui.showCinematic, this);
+=======
+        this.game.time.events.add(Phaser.Timer.SECOND * 2, this.ui.showCinematic, this.ui);
+        this.game.time.events.add(11000, function() {
+                //START GAME HERE
+                
+            }, this)
+            //this.ui.showSideCharacter("left", "bad")
+            //this.ui.showSideCharacter("right", "good")
+            //this.ui.createEffectExplosion(0, 0)
+            //this.ui.createEffectWater(0, 200)
+            //this.gotoGameOver()
+    }
+
+    gotoGameOver() {
+        this.zoomOut()
+        this.game.FRAMETV.zoomOut()
+        this.game.time.events.add(1000, function() {
+            this.fadeOut()
+        }, this)
+        this.game.time.events.add(2000, function() {
+            this.game.state.start('GameOver')
+        }, this)
+>>>>>>> 19f45c09c470abc1098892500cd7698b097157df
     }
 
     zoomIn() {
@@ -69,7 +93,7 @@ export default class MainGameplay extends Phaser.Group {
     }
 
     fadeOut() {
-this.bringToTop(this.graphics)
+        this.bringToTop(this.graphics)
 
         var tw = this.game.add.tween(this.graphics).to({
             alpha: 1

@@ -20,6 +20,8 @@ export default class extends Phaser.State {
 
         this.main.scale.setTo(0.8)
 
+        this.game.FRAMETV = this.tvFrame
+
         this.main.fadeIn()
         this.game.time.events.add(1000, function() {
             this.main.zoomIn()

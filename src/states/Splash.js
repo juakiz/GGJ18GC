@@ -13,7 +13,7 @@ export default class extends Phaser.State {
     //
     // load your assets
     this.game.load.image('buttonSpr', 'assets/images/button.png');
-    this.game.load.image('tvFrame', 'assets/images/tv_frame_ph.png');
+    this.game.load.image('tvFrame', 'assets/images/placeholder/UI/tv_frame_ph.png');
     this.game.load.image('boat_body', 'assets/images/placeholder/boat_body.png');
     this.game.load.image('boat_dude', 'assets/images/placeholder/boat_dude.png');
     this.game.load.image('boat_trees', 'assets/images/placeholder/boat_trees.png');
@@ -23,8 +23,35 @@ export default class extends Phaser.State {
     this.game.load.image('cannon', 'assets/images/placeholder/cannon.png');
     this.game.load.image('faro', 'assets/images/placeholder/faro.png');
     this.game.load.image('cannon_wheel', 'assets/images/placeholder/cannon_wheel.png');
-    this.game.load.image('start', 'assets/images/layouts/02_start.png');
-    this.game.load.image('hawk_complete', 'assets/images/placeholder/hawk parts/hawk_complete.png');
+    this.game.load.image('start', 'assets/images/placeholder/title_BirbsOfTheCaribbean.png');
+    this.game.load.image('hawk_complete', 'assets/images/placeholder/hawk parts flipped/hawk_complete.png');
+    this.game.load.image('cacatua_complete', 'assets/images/placeholder/cacatua/cacatua_complete.png');
+    this.game.load.image('cacatua_CRAZYCRAA', 'assets/images/placeholder/cacatua_CRAZYCRAA.png');
+    this.game.load.image('hawk_CRAZYCRAA', 'assets/images/placeholder/hawk_CRAZYCRAA.png');
+    this.game.load.image('pigeon', 'assets/images/placeholder/pigeon.png');
+    this.game.load.image('banner', 'assets/images/placeholder/UI/banner.png');
+    this.game.load.image('baloon', 'assets/images/placeholder/UI/baloon.png');
+    this.game.load.image('player', 'assets/images/placeholder/UI/player1.png');
+
+    this.game.load.image('imaginationFrame', 'assets/images/placeholder/UI/NEW_IMAGINATION_FRAME.png');
+
+    this.game.load.image('shoot', 'assets/images/effects/shoot.png');
+    this.game.load.image('explosion', 'assets/images/effects/explosion_with_text.png');
+    this.game.load.image('splash', 'assets/images/effects/splash_with_text.png');
+    this.game.load.image('drop', 'assets/images/effects/drop.png');
+
+
+    this.game.load.audio('bgm', 'assets/sounds/bgm.ogg');
+    this.game.load.audio('boom', 'assets/sounds/boom.ogg');
+    this.game.load.audio('caca', 'assets/sounds/caca.ogg');
+    this.game.load.audio('coo', 'assets/sounds/coo.ogg');
+    this.game.load.audio('flap', 'assets/sounds/flap.ogg');
+    this.game.load.audio('frush', 'assets/sounds/frush.ogg');
+    this.game.load.audio('scream', 'assets/sounds/scream.ogg');
+    this.game.load.audio('shoot', 'assets/sounds/shoot.ogg');
+    this.game.load.audio('skraa', 'assets/sounds/skraa.ogg');
+    this.game.load.audio('water', 'assets/sounds/water.ogg');
+    this.game.load.audio('wood', 'assets/sounds/wood.ogg');
   }
 
   create () {
