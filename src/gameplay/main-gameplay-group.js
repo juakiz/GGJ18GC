@@ -44,12 +44,25 @@ export default class MainGameplay extends Phaser.Group {
 
         this.game.time.events.add(Phaser.Timer.SECOND * 2, this.ui.showCinematic, this.ui);
         this.game.time.events.add(11000, function() {
-            //START GAME HERE
+                //START GAME HERE
+                
+            }, this)
+            //this.ui.showSideCharacter("left", "bad")
+            //this.ui.showSideCharacter("right", "good")
+            //this.ui.createEffectExplosion(0, 0)
+            //this.ui.createEffectWater(0, 200)
+            //this.gotoGameOver()
+    }
+
+    gotoGameOver() {
+        this.zoomOut()
+        this.game.FRAMETV.zoomOut()
+        this.game.time.events.add(1000, function() {
+            this.fadeOut()
         }, this)
-        //this.ui.showSideCharacter("left", "bad")
-        //this.ui.showSideCharacter("right", "good")
-        //this.ui.createEffectExplosion(0, 0)
-        //this.ui.createEffectWater(0, 200)
+        this.game.time.events.add(2000, function() {
+            this.game.state.start('GameOver')
+        }, this)
     }
 
     zoomIn() {

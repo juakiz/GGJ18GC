@@ -187,7 +187,7 @@ export default class UI extends Phaser.Group {
         _obj.mainGroup.add(_obj.pigeon)
 
         this.game.add.tween(_obj.pigeon).to({
-            angle: 10
+            angle: 4
         }, 1000, Phaser.Easing.Quadratic.InOut, true, true, -1, true);
 
         _obj.game = this.game
@@ -310,7 +310,7 @@ export default class UI extends Phaser.Group {
         this.add(_obj.mainGroup)
 
         if (side == "right") {
-            _obj.mainGroup.x = 1500 - 640
+            _obj.mainGroup.x = 1600 - 640
             _obj.mainGroup.y = 500 - 360
             _obj.finalX = 1000 - 640
             _obj.sprite1 = "cacatua_complete"
@@ -339,7 +339,7 @@ export default class UI extends Phaser.Group {
         _obj.mainGroup.add(_obj.pigeon)
 
         this.game.add.tween(_obj.pigeon).to({
-            angle: 10
+            angle: 4
         }, 1000, Phaser.Easing.Quadratic.InOut, true, true, -1, true);
 
         _obj.game = this.game
