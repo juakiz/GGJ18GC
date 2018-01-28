@@ -63,8 +63,8 @@ export default class Player extends Phaser.Group {
     if (this.playerPos === 'top')
     {
       let enemyShip = this.parent.botPlayer.ship;
-      if (this.shootedTargetX > -enemyShip.x - enemyShip.body.width / 2 &&
-        this.shootedTargetX < -enemyShip.x + enemyShip.body.width / 2)
+      if (this.shootedTargetX + this.ship.x > -enemyShip.x - enemyShip.body.width / 2 &&
+        this.shootedTargetX + this.ship.x < -enemyShip.x + enemyShip.body.width / 2)
         {
           this.game.FUCK_THIS_SHIT = 'PLAYER TWO WINS!';
           this.parent.parent.gotoGameOver();
@@ -76,8 +76,8 @@ export default class Player extends Phaser.Group {
       let enemyShip = this.parent.topPlayer.ship;
       // console.log(enemyShip);
       console.log(this.shootedTargetX, enemyShip.x /* - enemyShip.body.width / 2 */);
-      if (this.shootedTargetX > -enemyShip.x - enemyShip.body.width / 2 &&
-        this.shootedTargetX < -enemyShip.x + enemyShip.body.width / 2)
+      if (this.shootedTargetX + this.ship.x > -enemyShip.x - enemyShip.body.width / 2 &&
+        this.shootedTargetX + this.ship.x < -enemyShip.x + enemyShip.body.width / 2)
         {
           this.game.FUCK_THIS_SHIT = 'PLAYER ONE WINS!';
           this.parent.parent.gotoGameOver();
