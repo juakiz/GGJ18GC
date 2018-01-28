@@ -3,6 +3,7 @@ import Phaser from 'phaser'
 // import Mushroom from '../sprites/Mushroom'
 import Button from '../gameplay/button'
 import ONO from '../gameplay/onomatopoia'
+import SOUNDS from '../gameplay/sounds'
 
 export default class extends Phaser.State {
     init() {
@@ -13,7 +14,8 @@ export default class extends Phaser.State {
         this.filter = null
         this.filterSprite = null
 
-
+        SOUNDS.setupSounds(this.game)
+        SOUNDS.playBgm(this.game)
 
 
         var fragmentSrc = [

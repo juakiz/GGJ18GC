@@ -24,7 +24,23 @@ export default class extends Phaser.State {
     this.game.load.image('faro', 'assets/images/placeholder/faro.png');
     this.game.load.image('cannon_wheel', 'assets/images/placeholder/cannon_wheel.png');
     this.game.load.image('start', 'assets/images/layouts/02_start.png');
-    this.game.load.image('hawk_complete', 'assets/images/placeholder/hawk parts/hawk_complete.png');
+    this.game.load.image('hawk_complete', 'assets/images/placeholder/hawk parts flipped/hawk_complete.png');
+    this.game.load.image('cacatua_complete', 'assets/images/placeholder/cacatua/cacatua_complete.png');
+    this.game.load.image('banner', 'assets/images/placeholder/UI/banner.png');
+    this.game.load.image('baloon', 'assets/images/placeholder/UI/baloon.png');
+
+
+    this.game.load.audio('bgm', 'assets/sounds/bgm.ogg');
+    this.game.load.audio('boom', 'assets/sounds/boom.ogg');
+    this.game.load.audio('caca', 'assets/sounds/caca.ogg');
+    this.game.load.audio('coo', 'assets/sounds/coo.ogg');
+    this.game.load.audio('flap', 'assets/sounds/flap.ogg');
+    this.game.load.audio('frush', 'assets/sounds/frush.ogg');
+    this.game.load.audio('scream', 'assets/sounds/scream.ogg');
+    this.game.load.audio('shoot', 'assets/sounds/shoot.ogg');
+    this.game.load.audio('skraa', 'assets/sounds/skraa.ogg');
+    this.game.load.audio('water', 'assets/sounds/water.ogg');
+    this.game.load.audio('wood', 'assets/sounds/wood.ogg');
   }
 
   create () {
