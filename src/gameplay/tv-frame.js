@@ -13,6 +13,17 @@ export default class TvFrame extends Phaser.Group {
         this.sprite.anchor.setTo(0.5)
         this.add(this.sprite)
 
+        /*
+        this.bird1 = this.game.add.sprite((200 - this.game.width / 2)*1.2, (this.game.height / 2 + 300 - this.game.height / 2)*, 'player');
+        this.bird1.anchor.setTo(0.5)
+        this.add(this.bird1)
+
+        this.bird2 = this.game.add.sprite(1080 - this.game.width / 2, this.game.height / 2 + 300 - this.game.height / 2, 'player');
+        this.bird2.anchor.setTo(0.5)
+        this.bird2.scale.setTo(-1.2, 1.2)
+        this.add(this.bird2)
+        */
+
         this.scale.setTo(0.8)
     }
 

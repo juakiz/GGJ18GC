@@ -103,6 +103,13 @@ export default class extends Phaser.State {
         this.sprite.anchor.setTo(0.5)
         this.sprite.scale.setTo(0.8)
 
+        this.bird1 = this.game.add.sprite(200, this.game.height / 2 + 300, 'player');
+        this.bird1.anchor.setTo(0.5)
+
+        this.bird2 = this.game.add.sprite(1080, this.game.height / 2 + 300, 'player');
+        this.bird2.anchor.setTo(0.5)
+        this.bird2.scale.setTo(-1,1)
+
         /*
         this.filter.value = 300
         this.game.add.tween(this.filter).to({
@@ -122,6 +129,14 @@ export default class extends Phaser.State {
 
     }
     goToGame() {
+
+    	var tw = this.game.add.tween(this.bird1).to({
+            x: -500
+        }, 1000, Phaser.Easing.Quadratic.InOut, true);
+
+        var tw = this.game.add.tween(this.bird2).to({
+            x: 1280+500
+        }, 1000, Phaser.Easing.Quadratic.InOut, true);
 
         ONO.show(this.game.width / 2, this.game.height / 2, "Kree!", this.game, 1000, 6, null)
         SOUNDS.playFx(this.game, "skraa")

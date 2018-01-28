@@ -31,6 +31,7 @@ export default class extends Phaser.State {
     this.game.load.image('pigeon', 'assets/images/placeholder/pigeon.png');
     this.game.load.image('banner', 'assets/images/placeholder/UI/banner.png');
     this.game.load.image('baloon', 'assets/images/placeholder/UI/baloon.png');
+    this.game.load.image('player', 'assets/images/placeholder/UI/player1.png');
 
     this.game.load.image('imaginationFrame', 'assets/images/placeholder/UI/NEW_IMAGINATION_FRAME.png');
 
