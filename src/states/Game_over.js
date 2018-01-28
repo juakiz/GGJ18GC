@@ -77,7 +77,7 @@ export default class extends Phaser.State {
         };	
         var addText = ""
         //addText = "Player xxx Wins!"
-        var text = this.game.add.text(this.game.width/2, this.game.height/2+100, "GAME OVER!\n"+addText, style);
+        var text = this.game.add.text(this.game.width/2, this.game.height/2+100, "GAME OVER!\n"+this.game.FUCK_THIS_SHIT, style);
         text.anchor.setTo(0.5)
 
         var style = {

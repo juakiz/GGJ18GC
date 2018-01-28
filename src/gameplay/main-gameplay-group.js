@@ -40,12 +40,9 @@ export default class MainGameplay extends Phaser.Group {
         this.graphics.alpha = 1
         this.add(this.graphics)
 
-<<<<<<< HEAD
-        // this.game.time.events.add(Phaser.Timer.SECOND * 2, this.ui.showCinematic, this);
-=======
         this.game.time.events.add(Phaser.Timer.SECOND * 2, this.ui.showCinematic, this.ui);
         this.game.time.events.add(11000, function() {
-                //START GAME HERE
+            this.shipFight.init();
                 
             }, this)
             //this.ui.showSideCharacter("left", "bad")
@@ -64,7 +61,6 @@ export default class MainGameplay extends Phaser.Group {
         this.game.time.events.add(2000, function() {
             this.game.state.start('GameOver')
         }, this)
->>>>>>> 19f45c09c470abc1098892500cd7698b097157df
     }
 
     zoomIn() {

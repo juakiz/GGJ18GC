@@ -99,10 +99,20 @@ export default class Faro extends Phaser.Group {
     let hitted = this.checkLanding();
     if(hitted)
     {
+      if (this.player.playerPos === 'top')
+        this.player.parent.parent.ui.showSideCharacter("right", "good")
+      else
+        this.player.parent.parent.ui.showSideCharacter("left", "good")
+      
       this.shipMoveTo();
       // this.CA();
     } else
     {
+      if (this.player.playerPos === 'top')
+        this.player.parent.parent.ui.showSideCharacter("right", "bad")
+      else
+        this.player.parent.parent.ui.showSideCharacter("left", "bad")
+
       this.player.bubble.showBubble();
     }
   }

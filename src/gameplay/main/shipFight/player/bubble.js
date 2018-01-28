@@ -11,11 +11,17 @@ export default class Bubble extends Phaser.Group {
     this.targetPosition = null;
     this.targetAngle = null;
 
-    this.sprBubble = this.game.add.graphics(0, 0);
-    this.sprBubble.beginFill(0x000000, 1);
-    this.sprBubble.drawRect( 30 - this.game.width / 2, 60 - this.game.height / 2, -60 + this.game.width, -60 + this.game.height / 2);
-    this.sprBubble.endFill();
+    // this.sprBubble = this.game.add.graphics(0, 0);
+    // this.sprBubble.beginFill(0x000000, 1);
+    // this.sprBubble.drawRect( 30 - this.game.width / 2, 60 - this.game.height / 2, -60 + this.game.width, -60 + this.game.height / 2);
+    // this.sprBubble.endFill();
+    // this.add(this.sprBubble)
+
+    this.sprBubble = this.game.add.sprite(0/* this.game.width / 2 */, 0, 'imaginationFrame');
+    this.sprBubble.anchor.set(0.45, 0.8);
+    this.sprBubble.scale.set(-1.1, 1.1);
     this.add(this.sprBubble)
+
 
     this.ship = new Ship(this.game, this, this.playerPos);
     // this.swingShip();

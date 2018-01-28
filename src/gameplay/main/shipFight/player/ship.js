@@ -108,7 +108,7 @@ export default class Ship extends Phaser.Group {
 
   bulletGenerator()
   {
-    let bullet = this.game.add.sprite(this.cannon.x, this.cannon.y, 'bullet');
+    let bullet = this.game.add.sprite(this.cannon.x, this.cannon.y, 'shoot');
     bullet.anchor.set(0.5);
     this.add(bullet);
 

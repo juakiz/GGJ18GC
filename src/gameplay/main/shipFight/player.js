@@ -63,10 +63,11 @@ export default class Player extends Phaser.Group {
     if (this.playerPos === 'top')
     {
       let enemyShip = this.parent.botPlayer.ship;
-      if (this.shootedTargetX > enemyShip.x - enemyShip.body.width / 2 &&
-        this.shootedTargetX < enemyShip.x + enemyShip.body.width / 2)
+      if (this.shootedTargetX > -enemyShip.x - enemyShip.body.width / 2 &&
+        this.shootedTargetX < -enemyShip.x + enemyShip.body.width / 2)
         {
-          alert("GAME OVER")
+          this.game.FUCK_THIS_SHIT = 'PLAYER TWO WINS!';
+          this.parent.parent.gotoGameOver();
         } else{
           this.bubble.showBubble();
         }
@@ -74,14 +75,60 @@ export default class Player extends Phaser.Group {
     {
       let enemyShip = this.parent.topPlayer.ship;
       // console.log(enemyShip);
-      // console.log(this.shootedTargetX, enemyShip.x /* - enemyShip.body.width / 2 */);
-      if (this.shootedTargetX > enemyShip.x - enemyShip.body.width / 2 &&
-        this.shootedTargetX < enemyShip.x + enemyShip.body.width / 2)
+      console.log(this.shootedTargetX, enemyShip.x /* - enemyShip.body.width / 2 */);
+      if (this.shootedTargetX > -enemyShip.x - enemyShip.body.width / 2 &&
+        this.shootedTargetX < -enemyShip.x + enemyShip.body.width / 2)
         {
-          alert("GAME OVER")
+          this.game.FUCK_THIS_SHIT = 'PLAYER ONE WINS!';
+          this.parent.parent.gotoGameOver();
         } else {
-          this.bubble.showBubble();          
+          this.bubble.showBubble();
+          // this.createEffectWater();
         }
     }
   }
+
+  createEffectExplosion(xx, yy) {
+    var eff = this.game.add.sprite(xx, yy, "explosion")
+    eff.anchor.setTo(0.5)
+    eff.scale.setTo(0)
+
+    this.add(eff)
+
+    var tw = this.game.add.tween(eff.scale).to({
+        x: 1,
+        y: 1
+    }, 300, Phaser.Easing.Quadratic.InOut, true);
+
+    var tw2 = this.game.add.tween(eff).to({
+        alpha: 0
+    }, 1000,Phaser.Easing.Quadratic.InOut, false);
+
+    tw.chain(tw2)
+    tw2.onComplete.add(eff.destroy, eff)
+
+    SOUNDS.playFx(this.game, "boom")
+}
+
+createEffectWater(xx, yy) {
+    var eff = this.game.add.sprite(xx, yy, "splash")
+    eff.anchor.setTo(0.5)
+    eff.scale.setTo(0)
+
+    this.add(eff)
+
+    var tw = this.game.add.tween(eff.scale).to({
+        x: 1,
+        y: 1
+    }, 300, Phaser.Easing.Quadratic.InOut, true);
+
+    var tw2 = this.game.add.tween(eff).to({
+        alpha: 0
+    }, 1000,Phaser.Easing.Quadratic.InOut, false);
+
+    tw.chain(tw2)
+    tw2.onComplete.add(eff.destroy, eff)
+
+    SOUNDS.playFx(this.game, "water")
+}
 }

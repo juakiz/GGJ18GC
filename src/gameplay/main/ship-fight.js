@@ -7,7 +7,7 @@ export default class ShipFight extends Phaser.Group {
 
     this._main = parent;
 
-    this.init();
+    // this.init();
   }
 
   init()
