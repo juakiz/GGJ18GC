@@ -1,6 +1,8 @@
 import Ship from './player/ship';
 import Faro from './player/faro';
 import Bubble from './player/bubble';
+// import SOUNDS from '../../../gameplay/sounds';
+
 
 
 export default class Player extends Phaser.Group {
@@ -40,9 +42,9 @@ export default class Player extends Phaser.Group {
 
   init()
   {
+    this.bubble = new Bubble(this.game, this, this.playerPos);
     this.ship = new Ship(this.game, this, this.playerPos);
     this.faro = new Faro(this.game, this);
-    this.bubble = new Bubble(this.game, this, this.playerPos);
   }
 
   // FSM(command)
@@ -70,6 +72,7 @@ export default class Player extends Phaser.Group {
           this.parent.parent.gotoGameOver();
         } else{
           this.bubble.showBubble();
+          // this.parent.botPlayer.createEffectWater(this.shootedTargetX + this.ship.x);          
         }
     } else
     {
@@ -83,12 +86,12 @@ export default class Player extends Phaser.Group {
           this.parent.parent.gotoGameOver();
         } else {
           this.bubble.showBubble();
-          // this.createEffectWater();
+          // this.parent.topPlayer.createEffectWater(this.shootedTargetX + this.ship.x);
         }
     }
   }
 
-  createEffectExplosion(xx, yy) {
+  createEffectExplosion(xx, yy = 0) {
     var eff = this.game.add.sprite(xx, yy, "explosion")
     eff.anchor.setTo(0.5)
     eff.scale.setTo(0)
@@ -110,7 +113,7 @@ export default class Player extends Phaser.Group {
     SOUNDS.playFx(this.game, "boom")
 }
 
-createEffectWater(xx, yy) {
+createEffectWater(xx, yy = 0) {
     var eff = this.game.add.sprite(xx, yy, "splash")
     eff.anchor.setTo(0.5)
     eff.scale.setTo(0)
@@ -130,5 +133,5 @@ createEffectWater(xx, yy) {
     tw2.onComplete.add(eff.destroy, eff)
 
     SOUNDS.playFx(this.game, "water")
-}
+  }
 }
