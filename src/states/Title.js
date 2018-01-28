@@ -73,7 +73,23 @@ export default class extends Phaser.State {
         this.spritel.anchor.setTo(0.5)
         this.spritel.scale.setTo(0.8)
 
+        var style = {
+            font: "64px Chela One",
+            fill: "#000000",
+            boundsAlignH: "center",
+            boundsAlignV: "middle"
+        };
+        var text = this.game.add.text(this.game.width/2, this.game.height/2+200, "Press anything, Captain!", style);
+        text.anchor.setTo(0.5)
 
+        var style = {
+            font: "20px Chela One",
+            fill: "#000000",
+            boundsAlignH: "center",
+            boundsAlignV: "middle"
+        };
+        var text = this.game.add.text(140,80, "BirbTeam:\nCoding: Mattia Fortunati, Joaquin Monte\nArt: Daniela Arienti\nMusic: Valerio Silvetti", style);
+        text.alpha = 0.8
 
         //this.playButton = new Button(this, this.game.width / 2, this.game.height / 3 * 2, "PLAY", this.goToGame)
 
@@ -107,7 +123,8 @@ export default class extends Phaser.State {
     }
     goToGame() {
 
-        ONO.show(this.game.width / 2, this.game.height / 2, "Cree!", this.game, 1000, 6, null)
+        ONO.show(this.game.width / 2, this.game.height / 2, "Kree!", this.game, 1000, 6, null)
+        SOUNDS.playFx(this.game, "skraa")
 
         var tw = this.game.add.tween(this.graphics).to({
             alpha: 1
