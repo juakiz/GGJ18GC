@@ -1,5 +1,4 @@
 import Background from './main/background';
-import Bubble from './main/bubble';
 import ShipFight from './main/ship-fight';
 import UI from './main/ui';
 
@@ -22,7 +21,6 @@ export default class MainGameplay extends Phaser.Group {
     init() {
         this.bg = new Background(this.game, this);
         this.shipFight = new ShipFight(this.game, this);
-        this.bubble = new Bubble(this.game, this);
         this.ui = new UI(this.game, this);
 
         // const bannerText = 'Ciao Mattia'
@@ -42,7 +40,7 @@ export default class MainGameplay extends Phaser.Group {
         this.graphics.alpha = 1
         this.add(this.graphics)
 
-        this.game.time.events.add(Phaser.Timer.SECOND * 2, this.ui.showCinematic, this);
+        // this.game.time.events.add(Phaser.Timer.SECOND * 2, this.ui.showCinematic, this);
     }
 
     zoomIn() {
